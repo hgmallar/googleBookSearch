@@ -1,0 +1,15 @@
+nav.navbar.navbar-default {
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+}
+
+.nav-item {
+  font-size: 0.8rem;
+}
+
+.navbar {
+  border-bottom: 1px solid #ced4da;
+}

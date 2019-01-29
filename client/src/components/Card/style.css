@@ -1,0 +1,13 @@
+.card {
+  width: 90%;
+}
+
+.card-header {
+  font-size: 1.5rem;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 1px solid #ced4da;
+  border-radius: 0;
+}

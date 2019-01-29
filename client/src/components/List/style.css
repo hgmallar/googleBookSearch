@@ -1,0 +1,26 @@
+.book{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+.image {
+    max-height: 100%;
+    width: 15%;
+}
+
+.info {
+    width: 75%;
+}
+
+.title, .author {
+    font-style: italic;
+}
+
+.buttons {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}

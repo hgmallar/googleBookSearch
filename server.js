@@ -5,6 +5,8 @@ const app = express();
 const mongoose = require("mongoose");
 const routes = require("./routes");
 
+require("dotenv").config();
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

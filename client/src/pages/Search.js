@@ -6,6 +6,7 @@ import Form from "../components/Form";
 import Footer from "../components/Footer";
 import List from "../components/List";
 import API from "../utils/API";
+import Modal from "../components/Modal";
 
 class Search extends React.Component {
     state = {
@@ -13,8 +14,20 @@ class Search extends React.Component {
         books: [],
         err: ""
     };
+    addToSaved = (title, authors, link, image, description) => {
+        API.saveBook({ title: title, authors: authors, link: link, image: image, description: description })
+            .then(res => {
+                console.log("Book added!");
+                this.props.saveBook(title);
+            })
+            .catch(err => console.log(err));
+
+    };
     handleInputChange = event => {
         this.setState({ search: event.target.value });
+    };
+    handleClose = () => {
+        this.props.handleClose();
     };
     updateResults = event => {
         event.preventDefault();
@@ -24,8 +37,9 @@ class Search extends React.Component {
                 if (res.data.status === "error") {
                     throw new Error(res.data.message);
                 }
-                this.setState({ books: res.data.items, error: "" });
-                console.log("HERE" + this.state.books);
+                if (res.data.totalItems) {
+                    this.setState({ books: res.data.items, error: "" });
+                }
             })
             .catch(err => this.setState({ error: err.message }));
     };
@@ -33,15 +47,16 @@ class Search extends React.Component {
         const isBooks = this.state.books.length;
         return (
             <div>
+                <Modal show={this.props.show} handleClose={this.handleClose} title={this.props.title} />
                 <Navbar />
                 <Jumbotron />
                 <Card icon={<i className="fas fa-book" aria-hidden="true"></i>} title="Book Search">
                     <Form action={this.updateResults} search={this.state.search} handleInputChange={this.handleInputChange} />
                 </Card>
                 <Card icon="" title="Results">
-                    { isBooks ?
-                        (<List results={this.state.books} />) :
-                        (<h3 className="text-center">Search For A Book To Begin!</h3>) }
+                    {isBooks ?
+                        (<List results={this.state.books} action={this.addToSaved} text="Save" isApi={true} />) :
+                        (<h3 className="text-center">Search For A Book To Begin!</h3>)}
                 </Card>
                 <Footer />
             </div>

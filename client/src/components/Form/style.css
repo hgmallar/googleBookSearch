@@ -1,5 +1,4 @@
 label {
-  display: inline-block;
   margin-bottom: .5rem;
 }
 
@@ -14,13 +13,13 @@ section {
 }
 
 .form-control {
-  display: block;
-  width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #495057;
   background-color: #fff;
   margin-bottom: .5rem;
+  border: none;
+  border-bottom: 1px solid #ced4da;
 }
 
 input::placeholder{

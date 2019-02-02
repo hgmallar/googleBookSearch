@@ -1,11 +1,8 @@
 .navbar {
   grid-column: 1 / 4;
-  grid-row: 1;
   border-bottom: 1px solid #ced4da;
-  justify-items: start;
   background-color: #f8f9fa;
   display: flex;
-  flex-direction: row;
   align-items: center;
   padding: .5rem 1rem;
 }
@@ -23,8 +20,6 @@
 .navbar ul {
   list-style: none;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
 }
 
 .nav-link {

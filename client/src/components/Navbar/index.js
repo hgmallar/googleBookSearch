@@ -5,12 +5,11 @@ import "./style.css";
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar">
       <Link className="navbar-brand" to="/">
         Google Books
       </Link>
-      <div>
-        <ul className="navbar-nav">
+        <ul>
           <li className="nav-item">
             <Link
               to="/"
@@ -32,7 +31,6 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-      </div>
     </nav>
   );
 }

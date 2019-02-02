@@ -7,6 +7,8 @@ import Footer from "../components/Footer";
 import List from "../components/List";
 import API from "../utils/API";
 import Modal from "../components/Modal";
+import Wrapper from "../components/Wrapper";
+import Content from "../components/Content";
 
 class Search extends React.Component {
     state = {
@@ -46,20 +48,22 @@ class Search extends React.Component {
     render() {
         const isBooks = this.state.books.length;
         return (
-            <div>
+            <Wrapper>
                 <Modal show={this.props.show} handleClose={this.handleClose} title={this.props.title} />
                 <Navbar />
                 <Jumbotron />
-                <Card icon={<i className="fas fa-book" aria-hidden="true"></i>} title="Book Search">
-                    <Form action={this.updateResults} search={this.state.search} handleInputChange={this.handleInputChange} />
-                </Card>
-                <Card icon="" title="Results">
-                    {isBooks ?
-                        (<List results={this.state.books} action={this.addToSaved} text="Save" isApi={true} />) :
-                        (<h3 className="text-center">Search For A Book To Begin!</h3>)}
-                </Card>
+                <Content>
+                    <Card icon={<i className="fas fa-book" aria-hidden="true"></i>} title="Book Search">
+                        <Form action={this.updateResults} search={this.state.search} handleInputChange={this.handleInputChange} />
+                    </Card>
+                    <Card icon="" title="Results">
+                        {isBooks ?
+                            (<List results={this.state.books} action={this.addToSaved} text="Save" isApi={true} />) :
+                            (<h3 className="center">Search For A Book To Begin!</h3>)}
+                    </Card>
+                </Content>
                 <Footer />
-            </div>
+            </Wrapper>
         );
     }
 }

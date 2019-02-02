@@ -1,15 +1,42 @@
-nav.navbar.navbar-default {
-  margin-bottom: 0;
+.navbar {
+  grid-column: 1 / 4;
+  grid-row: 1;
+  border-bottom: 1px solid #ced4da;
+  justify-items: start;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: .5rem 1rem;
 }
-
 .navbar-brand {
   font-size: 1.8rem;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+  margin-right: 1rem;
 }
 
 .nav-item {
   font-size: 0.8rem;
 }
 
-.navbar {
-  border-bottom: 1px solid #ced4da;
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.nav-link {
+  padding: .5rem 1rem;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.active {
+  color: rgba(0,0,0,.9);
+  font-weight: bold;
 }

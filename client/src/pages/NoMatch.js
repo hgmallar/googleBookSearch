@@ -1,9 +1,10 @@
 import React from "react";
 import Jumbotron from "../components/Jumbotron";
+import Wrapper from "../components/Wrapper";
 
 function NoMatch() {
   return (
-    <div>
+    <Wrapper>
       <Jumbotron>
 
         <h1>404 Page Not Found</h1>
@@ -15,7 +16,7 @@ function NoMatch() {
 
 
       </Jumbotron>
-    </div>
+    </Wrapper>
   );
 }
 

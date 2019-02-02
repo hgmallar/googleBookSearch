@@ -1,4 +1,8 @@
 .jumbotron {
-  width: 90%;
-  justify-content: center;
+  grid-column: 2 / 3;
+  grid-row: 2;
+  background-color: #e9ecef;
+  border-radius: .3rem;
+  padding: 4rem 2rem;
+  text-align: center;
 }

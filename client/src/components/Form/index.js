@@ -3,8 +3,8 @@ import "./style.css";
 
 function Form(props) {
   return (
-    <section className="mx-auto">
-      <form className="search">
+    <section>
+      <form>
         <div className="form-group">
           <label htmlFor="book">Book</label>
           <input
@@ -15,7 +15,7 @@ function Form(props) {
             className="form-control"
             placeholder="Book Information"
           />
-          <button type="submit" onClick={props.action} className="btn btn-danger mt-2 float-right">
+          <button type="submit" onClick={props.action} className="red">
             Search
         </button>
         </div>

@@ -3,14 +3,16 @@
     flex-direction: row;
     align-content: flex-start;
     align-items: flex-start;
+    margin-top: 0.5rem;
+    border-bottom: 1px solid rgba(0,0,0,.125);
 }
 .image {
     max-height: 100%;
-    width: 15%;
+    padding: 0 10px;
 }
 
 .info {
-    width: 75%;
+    flex: 1;
 }
 
 .title, .author {
@@ -18,9 +20,7 @@
 }
 
 .buttons {
-    width: 10%;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    width: 100px;
+    margin-right: 10px;
 }

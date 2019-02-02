@@ -1,7 +1,29 @@
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
 section {
   margin: 0% 2%;
 }
 
 .form-group {
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
 }
+
+.form-control {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  margin-bottom: .5rem;
+}
+
+input::placeholder{
+  padding-left: 1.0rem;
+}
+
